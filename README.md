@@ -1,5 +1,4 @@
 # ed2026
-Estrutura de dados 2026
+Estrutura de dados 2026 - Enzo Vieira Yoshida
 
-Aqui será disponibilizado o código fonte apresentado em aula.
-
+Aqui será apresentado os códigos desenvolvidos em aula.
