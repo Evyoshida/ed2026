@@ -1,7 +1,5 @@
 #include <stdio.h> // diretiva de pré-compilação, sempre utilizado para corrigir warnings de tipagem de variáveis
 
-#define MAXIMOSTR 100 // define o valor de MAXIMOSTR para ser usado ao longo do código
-
 int main() { // nunca se esqueça de iniciar o main
     int i = 0;
     short s;
@@ -58,12 +56,4 @@ int main() { // nunca se esqueça de iniciar o main
         printf("sua letra é b \n");
         break;
     }
-
-    // strings:
-    char str[MAXIMOSTR];
-
-    
-    printf("Qual o seu nome: ");
-    fgets(str, MAXIMOSTR, stdin); // pega valores de input na execução. Alternativamente, scanf() é uma opção
-    printf("\nAlo %s!\n\n", str);
 }
