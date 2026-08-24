@@ -12,5 +12,5 @@
 	    
 	    printf("Qual a sua idade: ");
 	    scanf("%s", input); // alternativa para fgets
-	    printf("\nAlo %s!\n\n", input);
+	    printf("\nVocê tem %s anos!\n\n", input);
     }
