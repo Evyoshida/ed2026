@@ -1,59 +1,41 @@
 #include <stdio.h> // diretiva de pré-compilação, sempre utilizado para corrigir warnings de tipagem de variáveis
 
+#include <stdbool.h> // permite variáveis booleanas que não são nativas do C
+#include <string.h> // implementa funções únicas para strings
+
 int main() { // nunca se esqueça de iniciar o main
-    int i = 0;
-    short s;
-    char c;
-    float f;
-    double d;
-    long int l;
 
-    s = 65;
-    
-    // printf de valores. Note que <% + letra> formata o tipo de data sendo processado
-    printf("valor de s: %c \n", s);
+    // variáveis:
+    int i = 2; // %d ou %i, apenas valores inteiros
+    float f = 2e2; // %f ou %F, aceita notação científica
+    double d = 2E2; // %lf, aceita notação científica
+    char c = '!'; // %c, armazena apenas um caractere
+    char s[] = "Hello World";// %s, para strings
 
-    //sizeof() retorna tamanho de variável:
-    printf("Tamanho de i: %ld \n", sizeof(i));
-    printf("Tamanho de s: %ld \n", sizeof(s));
-    printf("Tamanho de c: %ld \n", sizeof(c));
-    printf("Tamanho de f: %ld \n", sizeof(f));
-    printf("Tamanho de d: %ld \n", sizeof(d));
-    printf("Tamanho de l: %ld \n", sizeof(l));
+    // prefixos short, long, unsigned:
+    short int si = -2; // %hd
+    unsigned int ui = 2; // %u
+    long int li = 22222222222; // %ld ou %li
+    long long int lli = 2; // %lld ou %lli
+    unsigned long int uli; // %lu
+    unsigned long long int ulli; // %llu
+    long double ld; // %Lf
 
-    // while:
-    while (i < 6) {
-        printf("contagem com while %d\n", i);
-        i++;
-    }
+    // criação de variáveis imutáveis, recomendado nomear com CAPS:
+    const int CI = 2;
 
-    // for:
-    for (i = 6; i < 11; i++) {
-        printf("contagem com for %d\n", i);
-    }
+    // booleanos, requerem <stdbool.h>:
+    bool b = true;
 
-    // if e else if:
-    int preco = 100;
-    int carteira = 50;
-    if (carteira < preco) {
-        printf("você está pobre! Falta %d\n", (preco - carteira));
-    }
-    else if (carteira == preco) {
-        printf("você ficou pobre!");
-    }
-    else {
-        printf("você está rico! Te sobra %d\n", (carteira - preco));
-    }
+    (b == true) ? printf("é verdade\n\n") : printf("é mentira\n\n");
 
-    // switch case:
-    char letra = 'a';
-    switch (letra) {
-        case 'a':
-        printf("sua letra é a \n");
-        break;
+    // testes:
+    int* ptr = &i; // &i retorna ponteiro de valor. Formatado por %p
+    printf("%i está salvo em: %p\n\n", *ptr, ptr); // *ptr retorna o valor salvo naquele espaço de memória 
 
-        case 'b':
-        printf("sua letra é b \n");
-        break;
-    }
+    char exclama[] = "!";
+    strcat(s, exclama); // concatenação de STRINGS exclusiva do <string.h>
+    printf("%s %c\n", s, s[strlen(s) - 1]); // strlen obtém o tamanho da string. Diferente de sizeof
+
+    return 0;
 }
